@@ -1,28 +1,52 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <GroceryList v-bind:groceries="groceries" v-on:del-grocery-item="deleteGroceryItem"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import GroceryList from './components/GroceryList';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    GroceryList
+  },
+
+  data(){
+    return {
+      groceries: [
+        {
+          id: 1,
+          name: "soap bottles",
+          quantity: 5
+        },
+        {
+          id: 2,
+          name: "toilet paper",
+          quantity: 50
+        }
+      ]
+    }
+  },
+
+  methods:{
+    deleteGroceryItem(id){
+      this.groceries = this.groceries.filter(item => item.id != id);
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.4;
+  }
 </style>
