@@ -1,5 +1,10 @@
 # grocery-list-vue-app
 
+This App is for evaluation purposes. You can add and delete items to the List.
+Build with the vuejs.
+
+check it out at https://grocery-list-vue-app.web.app/
+
 ## Project setup
 ```
 npm install

@@ -1,43 +1,21 @@
 <template>
   <div id="app">
-    <GroceryList v-bind:groceries="groceries" v-on:del-grocery-item="deleteGroceryItem"/>
+    <div id="nav">
+      <Header />
+    </div>
+    <router-view />
   </div>
 </template>
-
 <script>
-import GroceryList from './components/GroceryList';
+  import Header from './components/layout/GroceryHeader.vue';
 
-export default {
-  name: 'App',
-  components: {
-    GroceryList
-  },
-
-  data(){
-    return {
-      groceries: [
-        {
-          id: 1,
-          name: "soap bottles",
-          quantity: 5
-        },
-        {
-          id: 2,
-          name: "toilet paper",
-          quantity: 50
-        }
-      ]
-    }
-  },
-
-  methods:{
-    deleteGroceryItem(id){
-      this.groceries = this.groceries.filter(item => item.id != id);
+  export default {
+    name: 'app',
+    components: {
+      Header
     }
   }
-}
 </script>
-
 <style>
   * {
     box-sizing: border-box;
@@ -49,4 +27,24 @@ export default {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.4;
   }
+  .card {
+        margin: 24px;
+        padding: 16px;
+        color: #757575;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    }
+    .button {
+        position: relative;
+        padding: 4px 0;
+        margin: 1em;
+        width: 160px;
+        overflow: hidden;
+        color: #000;
+        text-transform: uppercase;
+        border-radius: 3px;
+        outline-color: #ffffff;
+        background-color: #ffffff;
+    }
 </style>
