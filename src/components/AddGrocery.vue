@@ -2,12 +2,12 @@
     <div class="card">
         <h1> Grocery List </h1>
         <div class="group">      
-            <input type="text" v-model="name" required>
+            <input type="text" v-model="name" required />
             <span class="highlight"></span>
             <label>name</label>
         </div>
         <div class="group">      
-            <input type="number" v-model="quantity" required>
+            <input type="number" v-model="quantity" required />
             <span class="highlight"></span>
             <label>quantity</label>
         </div>

@@ -1,10 +1,10 @@
 <template>
     <div>
-        <Header class="header">
+        <header class="header">
             <h1>Grocery List Vue App</h1>
             <router-link to="/">Home</router-link>
             <router-link to="/list">Grocery List</router-link>
-        </Header>
+        </header>
     </div>    
 </template>
 
